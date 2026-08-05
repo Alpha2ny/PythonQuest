@@ -28,11 +28,13 @@ running = True
 
 while running:
     if game_state == "MENU":
-    screen.fill(BLACK)
-    screen.blit(title, title_rect)
-    pygame.display.flip()
+         screen.fill(BLACK)
+         screen.blit(title, title_rect)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    pygame.display.flip()
 
 pygame.quit()

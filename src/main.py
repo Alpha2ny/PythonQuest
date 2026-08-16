@@ -7,8 +7,14 @@ Created by Anthony Allard.
 
 import pygame 
 from states.menu import draw_menu
+from states.chapter import draw_chapter_1
+from states.story import draw_story_1
 
 pygame.init()
+
+from systems.typewriter import Typewriter
+
+typewriter = Typewriter(character_display_time=50)
 
 WIDTH = 1920
 HEIGHT = 1080
@@ -25,11 +31,27 @@ running = True
 
 while running:
     if game_state == "MENU":
-         draw_menu(screen)
+         draw_menu(screen, WIDTH, HEIGHT)
+
+    elif game_state == "CHAPTER_1":
+        draw_chapter_1(screen, WIDTH, HEIGHT)
+
+    elif game_state == "STORY_1":
+        draw_story_1(screen, WIDTH, HEIGHT, typewriter)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+            
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+
+                if game_state == "MENU":
+                    game_state = "CHAPTER_1"
+                    
+                elif game_state == "CHAPTER_1":
+                    game_state = "STORY_1"
+                    print("Chapter 1: Entering the game...")
 
     pygame.display.flip()
 

@@ -9,10 +9,10 @@ import pygame
 from states.menu import draw_menu
 from states.chapter import draw_chapter_1
 from states.story import draw_story_1
+from systems.typewriter import Typewriter
+from content.story_data import STORY_1_TEXT
 
 pygame.init()
-
-from systems.typewriter import Typewriter
 
 typewriter = Typewriter(character_display_time=50)
 
@@ -51,6 +51,7 @@ while running:
                     
                 elif game_state == "CHAPTER_1":
                     game_state = "STORY_1"
+                    typewriter.reset_new_text(STORY_1_TEXT)
                     print("Chapter 1: Entering the game...")
 
     pygame.display.flip()

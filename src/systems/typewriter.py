@@ -1,10 +1,13 @@
-import pygame
-
 class Typewriter:
     def __init__(self, character_display_time=50):
         self.text = ""
         self.characters_displayed = 0
         self.character_display_time = character_display_time
+        self.last_character_time = 0
+
+    def reset_new_text(self, new_text):
+        self.text = new_text
+        self.characters_displayed = 0
         self.last_character_time = 0
 
     def update(self, current_time):

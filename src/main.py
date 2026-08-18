@@ -54,11 +54,20 @@ while running:
                     
                 elif game_state == "CHAPTER_1":
                     game_state = "STORY_1"
-                    typewriter.reset_new_text(STORY_1_TEXT)
+
                     print("Chapter 1: Entering the game...")
 
-                    line = dialogues.get_next_line()
-                    typewriter.reset_new_text(line)
+                elif game_state == "STORY_1":
+                    if not typewriter.is_finished():
+                     typewriter.complete_text()
+                    else:
+                        next_line = dialogues.get_next_line()
+                        if next_line is not None:
+                            typewriter.reset_new_text(next_line)
+                        else:
+                            print("End of story reached.")
+                            game_state = "MENU"
+                   
 
     pygame.display.flip()
 

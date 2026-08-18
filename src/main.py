@@ -10,11 +10,14 @@ from states.menu import draw_menu
 from states.chapter import draw_chapter_1
 from states.story import draw_story_1
 from systems.typewriter import Typewriter
+from systems.dialogue import Dialogue 
+from content.dialogue_data import DIALOGUES_STORY_1
 from content.story_data import STORY_1_TEXT
 
 pygame.init()
 
 typewriter = Typewriter(character_display_time=50)
+dialogues = Dialogue(DIALOGUES_STORY_1)
 
 WIDTH = 1920
 HEIGHT = 1080
@@ -53,6 +56,9 @@ while running:
                     game_state = "STORY_1"
                     typewriter.reset_new_text(STORY_1_TEXT)
                     print("Chapter 1: Entering the game...")
+
+                    line = dialogues.get_next_line()
+                    typewriter.reset_new_text(line)
 
     pygame.display.flip()
 

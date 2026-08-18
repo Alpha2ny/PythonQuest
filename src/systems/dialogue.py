@@ -1,4 +1,4 @@
-class dialogue:
+class Dialogue:
     def __init__(self, dialogue_data):
         self.dialogue_data = dialogue_data
         self.current_index = 0

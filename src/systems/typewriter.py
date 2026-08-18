@@ -19,3 +19,8 @@ class Typewriter:
     def get_visible_text(self):
         return self.text[:self.characters_displayed]
 
+    def is_finished(self):
+        return self.characters_displayed >= len(self.text)
+
+    def complete_text(self):
+        self.characters_displayed = len(self.text)

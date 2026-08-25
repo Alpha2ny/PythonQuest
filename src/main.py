@@ -6,18 +6,23 @@ Created by Anthony Allard.
 """
 
 import pygame 
+
 from states.menu import draw_menu
 from states.chapter import draw_chapter_1
-from states.story import draw_story_1
+from states.story import draw_story
+from content.story_data import STORY_1_TITLE
 from systems.typewriter import Typewriter
 from systems.dialogue import Dialogue 
 from content.dialogue_data import DIALOGUES_STORY_1
-from content.story_data import STORY_1_TEXT
 
 pygame.init()
 
 typewriter = Typewriter(character_display_time=50)
 dialogues = Dialogue(DIALOGUES_STORY_1)
+
+story_data = {
+    "title": STORY_1_TITLE
+}
 
 WIDTH = 1920
 HEIGHT = 1080
@@ -40,7 +45,7 @@ while running:
         draw_chapter_1(screen, WIDTH, HEIGHT)
 
     elif game_state == "STORY_1":
-        draw_story_1(screen, WIDTH, HEIGHT, typewriter)
+        draw_story(screen, WIDTH, HEIGHT, typewriter, story_data)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

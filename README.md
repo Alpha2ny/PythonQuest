@@ -57,7 +57,7 @@ PythonQuest/
 ├── requirements.txt
 └── CHANGELOG.md
 ```
-
+```markdown
 states/   → Game states and their display logic
 systems/  → Reusable game systems
 content/  → Game content and data

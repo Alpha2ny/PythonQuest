@@ -32,15 +32,34 @@ Planned features:
 
 ## Project Structure
 
-```
 PythonQuest/
- assets/
- docs/
- src/
- README.md
- requirements.txt
- CHANGELOG.md
-```
+├── assets/
+├── docs/
+├── src/
+│   ├── main.py
+│   │
+│   ├── states/
+│   │   ├── menu.py
+│   │   ├── chapter.py
+│   │   └── story.py
+│   │
+│   ├── systems/
+│   │   ├── dialogue.py
+│   │   └── typewriter.py
+│   │
+│   └── content/
+│       ├── story_data.py
+│       ├── chapter_data.py
+│       └── dialogue_data.py
+│
+├── README.md
+├── requirements.txt
+└── CHANGELOG.md
+
+states/   → Game states and their display logic
+systems/  → Reusable game systems
+content/  → Game content and data
+main.py   → Main game loop and orchestration
 
 ---
 

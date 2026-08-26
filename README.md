@@ -32,6 +32,7 @@ Planned features:
 
 ## Project Structure
 
+```text
 PythonQuest/
 ├── assets/
 ├── docs/
@@ -55,6 +56,7 @@ PythonQuest/
 ├── README.md
 ├── requirements.txt
 └── CHANGELOG.md
+```
 
 states/   → Game states and their display logic
 systems/  → Reusable game systems

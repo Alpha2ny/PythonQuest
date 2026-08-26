@@ -10,25 +10,16 @@ import pygame
 from states.menu import draw_menu
 from states.chapter import draw_chapter
 from states.story import draw_story
-from content.story_data import STORY_1_TITLE
+from content.story_data import story_data
 from systems.typewriter import Typewriter
 from systems.dialogue import Dialogue 
-from content.dialogue_data import DIALOGUES_STORY_1
-from content.chapter_data import CHAPTER_1_TITLE, CHAPTER_1_INTRO
+from content.dialogue_data import dialogue_data
+from content.chapter_data import chapter_data
 
 pygame.init()
 
 typewriter = Typewriter(character_display_time=50)
-dialogues = Dialogue(DIALOGUES_STORY_1)
-
-story_data = {
-    "title": STORY_1_TITLE
-}
-
-chapter_data = {
-    "title": CHAPTER_1_TITLE,
-    "intro": CHAPTER_1_INTRO
-}
+dialogues = Dialogue(dialogue_data)
 
 WIDTH = 1920
 HEIGHT = 1080

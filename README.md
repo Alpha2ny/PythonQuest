@@ -56,13 +56,12 @@ PythonQuest/
 ├── README.md
 ├── requirements.txt
 └── CHANGELOG.md
-```
-```markdown
+
 states/   → Game states and their display logic
 systems/  → Reusable game systems
 content/  → Game content and data
 main.py   → Main game loop and orchestration
-
+```
 ---
 
 ## Creator
